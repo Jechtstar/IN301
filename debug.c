@@ -4,14 +4,19 @@
 
 
 //fonction factorielle
-int factorielle(int x){
-  int res;
-  if(x == 0) return 0;
-  while(x > 1){
-    res *= (x-1);
-    x = x-1;
-  }
-  return res;
+int factorielle (int nombre)
+{
+    int x = 0;
+    if (nombre == 1)
+    {
+        x = 1;
+        return(x);
+    }
+    else
+    {
+        x = nombre * factorielle(nombre - 1); // on appelle encore la fonction qui s'appellera encore elle meme si nombre est != de 1
+        return(x);
+    }
 }
 
 //fonction somme
@@ -19,8 +24,8 @@ int somme(int x){
   int res = 0;
   int i = 0;
   while(i <= x){
-    i++;       /*incrementation 
-    res += i-1;/* fin de boucle */
+    i++;
+    res=res+i;
   }
   return res;
 }
